@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplikasi Cuaca Spongebar - Praktikum PPWS</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Aplikasi Cuaca Keren - Praktikum PPWS</title>
 </head>
 <body>
 
@@ -23,14 +15,75 @@
         </div>
 
         <div class="not-found">
-            <img src="https://i.ibb.co/ckYc72T/404.png" alt="Lokasi Tidak Ditemukan">
+            <img src="https://i.ibb.co/ckYc72T/404.png" alt="Lokasi Tidak Ditemukan" width="250">
             <p>Lokasi yang kamu cari tidak ditemukan.</p>
         </div>
         
         <main class="card">
-            </main>
+            <div class="weather-content">
+                
+                <div class="main-weather">
+                    <h2 id="kecamatan-main">-</h2>
+                    <p class="date" id="tanggal">-</p>
+                    <img src="https://i.ibb.co/fDbP2xR/cloud.png" id="weatherIcon" alt="Ikon Cuaca" width="150">
+                    <p class="temperature"><span id="suhu">0</span><span class="celcius">°C</span></p>
+                    <p class="description" id="deskripsiCuaca">-</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="detailed-info">
+                    <h3>Detail Informasi</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <i class='bx bx-wind'></i>
+                            <div>
+                                <p>Kecepatan Angin</p>
+                                <span id="angin">-</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class='bx bxs-droplet-half'></i>
+                            <div>
+                                <p>Kelembapan</p>
+                                <span id="kelembapan">-</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class='bx bxs-thermometer'></i>
+                            <div>
+                                <p>Suhu</p>
+                                <span id="suhu-detail">-</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class='bx bx-flag'></i>
+                            <div>
+                                <p>Negara</p>
+                                <span id="negara">-</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class='bx bx-trending-up'></i>
+                            <div>
+                                <p>Latitude</p>
+                                <span id="latitude">-</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class='bx bx-trending-down'></i>
+                            <div>
+                                <p>Longitude</p>
+                                <span id="longitude">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
     </div>
 
-    <script src="script.js"></script>
 </body>
 </html>
+```
