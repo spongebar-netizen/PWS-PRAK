@@ -1,0 +1,155 @@
+/* Import Font dari Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #232526, #414345);
+    color: #fff;
+    transition: background 0.8s ease-in-out;
+}
+
+/* --- KELAS UNTUK BACKGROUND DINAMIS --- */
+body.weather-sunny { background: linear-gradient(135deg, #47abff, #1a82e8); }
+body.weather-cloudy { background: linear-gradient(135deg, #6c757d, #495057); }
+body.weather-rainy { background: linear-gradient(135deg, #2c3e50, #1f2b38); }
+body.weather-misty { background: linear-gradient(135deg, #bdc3c7, #8c969d); }
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    padding: 20px;
+}
+
+/* --- KOTAK PENCARIAN --- */
+.search-box {
+    width: 100%;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+.search-box i { font-size: 28px; }
+.search-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 15px;
+}
+.search-box input::placeholder { color: rgba(255, 255, 255, 0.7); }
+.search-box button {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    color: #232526;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.search-box button:hover { background: #232526; color: #fff; }
+
+/* --- KARTU HASIL (MELEBAR) --- */
+.card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    transition: all 0.5s ease;
+}
+.card.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.weather-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- KOLOM KIRI --- */
+.main-weather {
+    text-align: center;
+    width: 45%;
+}
+#kecamatan-main {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+#weatherIcon { width: 150px; }
+.temperature { font-size: 4rem; font-weight: 700; position: relative; }
+.temperature .celcius { position: absolute; font-size: 1.5rem; font-weight: 500; top: 20px; }
+.description { font-size: 1.2rem; text-transform: capitalize; }
+
+/* --- PEMBATAS --- */
+.divider {
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    align-self: stretch; /* Membuat tinggi pembatas sama dengan kontainer */
+}
+
+/* --- KOLOM KANAN --- */
+.detailed-info {
+    width: 48%;
+}
+.detailed-info h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0,0,0,0.15);
+    padding: 10px;
+    border-radius: 10px;
+}
+.detail-item i { font-size: 32px; color: #f0f0f0; }
+.detail-item p { font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); }
+.detail-item span { font-weight: 600; text-transform: capitalize; }
+
+/* --- NOT FOUND --- */
+.not-found {
+    text-align: center;
+    display: none; /* Awalnya tersembunyi */
+}
+.not-found.visible {
+    display: block;
+}
+.not-found img { width: 50%; max-width: 250px; }
+.not-found p { margin-top: 10px; font-size: 18px; font-weight: 500; }
