@@ -140,7 +140,7 @@ body.weather-misty { background: linear-gradient(135deg, #bdc3c7, #8c969d); }
     border-radius: 10px;
 }
 .detail-item i { font-size: 32px; color: #f0f0f0; }
-.detail-item p { font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); }
+.detail-item p { font-size: 0.8rem; color: rgba(236, 23, 23, 0.7); }
 .detail-item span { font-weight: 600; text-transform: capitalize; }
 
 /* --- NOT FOUND --- */
